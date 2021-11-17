@@ -8,12 +8,12 @@ import entities.Product;
 public class Program {
 
 	public static void main(String[] args) {
-		
-		//programa para contagem de produtos e valor no estoque
-		
+
+		// programa para contagem de produtos e valor no estoque
+
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-		
+
 		Product product = new Product();
 		System.out.println("Enter product data: ");
 		System.out.print("Name: ");
@@ -22,10 +22,26 @@ public class Program {
 		product.price = sc.nextDouble();
 		System.out.print("Quantity in stock: ");
 		product.quantity = sc.nextInt();
-		
-		System.out.println(product);
-				
-		
-	sc.close();
+
+		System.out.println();
+		System.out.print("Product data: " + product);
+
+		System.out.println();
+		System.out.print("Enter number of products to be added in stock: ");
+		int quantity = sc.nextInt();
+		product.addProducts(quantity);
+
+		System.out.println();
+		System.out.println("Update data: " + product);
+
+		System.out.println();
+		System.out.print("Enter number of products to be remove from stock: ");
+		quantity = sc.nextInt();
+		product.removeProducts(quantity);
+
+		System.out.println();
+		System.out.println("Update data: " + product);
+
+		sc.close();
 	}
 }
